@@ -21,6 +21,5 @@
   "[scss]": {
     "editor.formatOnSave": true
   },
-  "svg.preview.background": "editor",
-  "unocss.root": "theme"
+  "svg.preview.background": "editor"
 }

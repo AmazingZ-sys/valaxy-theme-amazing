@@ -1,23 +1,11 @@
-<script lang="ts" setup>
-import { useConfig } from 'valaxy'
-const config = useConfig()
-</script>
-
 <template>
-  <HairyLayout
-    class="HairyHomeLayout"
-    :header="{
-      headline: config.title,
-      title: config.author.name,
-      description: 'good evening, how are you doing?',
-    }"
-  >
-    <router-view />
-  </HairyLayout>
-</template>
+  <Layout>
+    <div class="divide-y divide-gray-200 dark:divide-gray-700">
+      <StarterHeader />
 
-<style>
-.HairyHomeHeader .title {
-  @apply tracking-5;
-}
-</style>
+      <slot>
+        <router-view />
+      </slot>
+    </div>
+  </Layout>
+</template>
