@@ -1,17 +1,164 @@
-@use "./vars" as *;
-@use "valaxy/client/styles/mixins" as * with($namespace: "st");
+//@use "./vars" as *;
+//@use "valaxy/client/styles/mixins" as * with($namespace: "st");
 
 :root {
-  --un-prose-links: var(--st-c-link);
+  --az-c-primary: #1bc9a6;
+  --az-c-primary-light: #14d6af;
+  --az-c-primary-lighter: #15e8be;
+  --az-c-primary-dark: #1aaa8d;
+  --az-c-primary-darker: #0b755f;
+  --az-c-primary-dimm-1: rgba(27, 201, 166, 0.5);
+  --az-c-primary-dimm-2: rgba(27, 201, 166, 0.25);
+  --az-c-primary-dimm-3: rgba(27, 201, 166, 0.05);
 
-  @include set-css-var-from-map($common);
-  @include set-css-var-from-map($z-index, "z");
+  --az-c-black: #1a1a1a;
+  --az-c-black-pure: #000000;
+  --az-c-black-soft: #242424;
+  --az-c-black-mute: #2f2f2f;
+
+  --az-c-white: #ffffff;
+  --az-c-white-soft: #f9f9f9;
+  --az-c-white-mute: #f1f1f1;
+
+  --az-c-gray: #8e8e8e;
+  --az-c-gray-light-1: #aeaeae;
+  --az-c-gray-light-2: #c7c7c7;
+  --az-c-gray-light-3: #d1d1d1;
+  --az-c-gray-light-4: #e5e5e5;
+  --az-c-gray-light-5: #f2f2f2;
+  --az-c-gray-dark-1: #636363;
+  --az-c-gray-dark-2: #484848;
+  --az-c-gray-dark-3: #3a3a3a;
+  --az-c-gray-dark-4: #282828;
+  --az-c-gray-dark-5: #202020;
+
+  --az-c-divider-light-1: rgba(60, 60, 60, 0.29);
+  --az-c-divider-light-2: rgba(60, 60, 60, 0.12);
+  --az-c-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --az-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+
+  --az-c-text-light-1: var(--az-c-indigo);
+  --az-c-text-light-2: rgba(60, 60, 60, 0.70);
+  --az-c-text-light-3: rgba(60, 60, 60, 0.33);
+  --az-c-text-light-4: rgba(60, 60, 60, 0.18);
+
+  --az-c-text-dark-1: rgba(255, 255, 255, 0.87);
+  --az-c-text-dark-2: rgba(235, 235, 235, 0.60);
+  --az-c-text-dark-3: rgba(235, 235, 235, 0.38);
+  --az-c-text-dark-4: rgba(235, 235, 235, 0.18);
+
+  --az-c-indigo: #213547;
+  --az-c-indigo-soft: #476582;
+  --az-c-indigo-light: #aac8e4;
+  --az-c-indigo-lighter: #c9def1;
+  --az-c-indigo-dark: #1d2f3f;
+  --az-c-indigo-darker: #14212e;
+}
+
+.dark {
+  --az-c-primary: #8fe6d5;
+  --az-c-primary-light: #a8ffee;
+  --az-c-primary-lighter: #bafef1;
+  --az-c-primary-dark: #66ccb8;
+  --az-c-primary-darker: #24a188;
+  --az-c-primary-dimm-1: rgba(143, 230, 213, 0.5);
+  --az-c-primary-dimm-2: rgba(143, 230, 213, 0.25);
+  --az-c-primary-dimm-3: rgba(143, 230, 213, 0.05);
 }
 
 :root {
-  @include set-css-var-from-map($light);
+  --az-c-waves-dimm: var(--va-c-bg);
+  --az-c-waves-dimm-1: rgba(255, 255, 255, 0.7);
+  --az-c-waves-dimm-2: rgba(255, 255, 255, 0.5);
+  --az-c-waves-dimm-3: rgba(255, 255, 255, 0.3);
 }
 
-html.dark {
-  @include set-css-var-from-map($dark);
+.dark {
+  --az-c-waves-dimm-1: rgba(34, 34, 34, 0.7);
+  --az-c-waves-dimm-2: rgba(34, 34, 34, 0.5);
+  --az-c-waves-dimm-3: rgba(34, 34, 34, 0.3);
+}
+
+/**
+ * Typography
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --az-font-family-seto: Seto;
+  --az-font-family-modesty: Modesty;
+  --az-font-family-christmas: MountainsofChristmas;
+  --az-font-family-frederick: FrederickatheGreat;
+}
+
+/**
+ * Colors Theme
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --az-c-bg: var(--az-c-white);
+  --az-c-bg-soft: var(--az-c-white-soft);
+  --az-c-bg-mute: var(--az-c-white-mute);
+  --az-c-bg-alt: var(--az-c-white-soft);
+
+  --az-c-divider: var(--az-c-divider-light-1);
+  --az-c-divider-light: var(--az-c-divider-light-2);
+
+  --az-c-divider-inverse: var(--az-c-divider-dark-1);
+  --az-c-divider-inverse-light: var(--az-c-divider-dark-2);
+
+  --az-c-text-1: var(--az-c-text-light-1);
+  --az-c-text-2: var(--az-c-text-light-2);
+  --az-c-text-3: var(--az-c-text-light-3);
+  --az-c-text-4: var(--az-c-text-light-4);
+
+  --az-c-text-inverse-1: var(--az-c-text-dark-1);
+  --az-c-text-inverse-2: var(--az-c-text-dark-2);
+  --az-c-text-inverse-3: var(--az-c-text-dark-3);
+  --az-c-text-inverse-4: var(--az-c-text-dark-4);
+
+  --az-c-text-code: var(--az-c-indigo-soft);
+
+  --az-c-brand: var(--az-c-primary);
+  --az-c-brand-light: var(--az-c-primary-light);
+  --az-c-brand-lighter: var(--az-c-primary-lighter);
+  --az-c-brand-dark: var(--az-c-primary-dark);
+  --az-c-brand-darker: var(--az-c-primary-darker);
+
+  --va-c-brand: var(--az-c-brand);
+
+  --az-c-sponsor: #fd1d7c;
+}
+
+.dark {
+  --az-c-bg: var(--az-c-black-soft);
+  --az-c-bg-soft: var(--az-c-black-mute);
+  --az-c-bg-mute: var(--az-c-gray-dark-3);
+  --az-c-bg-alt: var(--az-c-black);
+
+  --az-c-divider: var(--az-c-divider-dark-1);
+  --az-c-divider-light: var(--az-c-divider-dark-2);
+
+  --az-c-divider-inverse: var(--az-c-divider-light-1);
+  --az-c-divider-inverse-light: var(--az-c-divider-light-2);
+
+  --az-c-text-1: var(--az-c-text-dark-1);
+  --az-c-text-2: var(--az-c-text-dark-2);
+  --az-c-text-3: var(--az-c-text-dark-3);
+  --az-c-text-4: var(--az-c-text-dark-4);
+
+  --az-c-text-inverse-1: var(--az-c-text-light-1);
+  --az-c-text-inverse-2: var(--az-c-text-light-2);
+  --az-c-text-inverse-3: var(--az-c-text-light-3);
+  --az-c-text-inverse-4: var(--az-c-text-light-4);
+
+  --az-c-text-code: var(--az-c-indigo-lighter);
+}
+
+/**
+ * element-plus Theme
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --el-color-primary: var(--az-c-primary) !important;
+  --el-text-color-primary: var(--az-c-text-2) !important;
 }

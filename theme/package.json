@@ -1,25 +1,25 @@
 {
-  "name": "valaxy-theme-starter",
-  "version": "0.2.0",
+  "name": "valaxy-theme-amazing",
+  "version": "0.0.1",
+  "description": "Amazing theme",
   "packageManager": "pnpm@7.5.0",
   "author": {
-    "email": "me@yunyoujun.cn",
-    "name": "YunYouJun",
-    "url": "https://www.yunyoujun.cn"
+    "email": "dixilin@163.com",
+    "name": "AmazingZ-sys",
+    "url": "https://github.com/AmazingZ-sys"
   },
-  "homepage": "https://starter.valaxy.site",
+  "homepage": "https://github.com/AmazingZ-sys/valaxy-theme-amazing",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YunYouJun/valaxy-theme-starter"
+    "url": "https://github.com/AmazingZ-sys/valaxy-theme-amazing"
   },
   "keywords": [
     "valaxy",
     "theme",
-    "starter",
+    "amazing",
     "vue"
   ],
-  "main": "client/index.ts",
-  "types": "types/index.d.ts",
+  "types": "index.d.ts",
   "dependencies": {
     "@iconify-json/ant-design": "^1.1.5",
     "@iconify-json/simple-icons": "^1.1.44"
