@@ -20,7 +20,7 @@ const show = computed(() => {
 </script>
 
 <template>
-  <div class="AmazingNav fixed w-full h-3.125rem lt-sm:h-3.5rem top-0 z-20 opacity-0 transition-opacity duration-200" :class="[show && 'opacity-100']">
+  <div class="AmazingNav fixed w-full h-3.125rem lt-sm:h-3.5rem top-0 z-20 opacity-0 transition-opacity duration-200 px-4rem" :class="[show && 'opacity-100']">
     <div class="mx-auto breakpoint flex relative z-1 h-full">
       <div class="flex items-center lt-sm:order-1 lt-sm:flex-1 justify-center">
         <AmazingNavTitle />
